@@ -1,0 +1,81 @@
+# The format is: <instruction mem. address>: <OPCODE> <COMMA SEPARATED OPERANDS>;
+# All numbers are decimal
+
+# Registers:
+# R0  ─ Always 0
+# R1  ┬ Working numbers
+# R2  ┘
+# R3  ─ Temporary store for swapping R1 and R2
+# R4  ─ Current index (in Fibonacci sequence)
+# R5  ─ Target index (Nr. of Fibonacci nrs. to generate)
+# R6  ─ Bias counter (cycles 1-4)
+# R7  ─ Bias store (current bias number)
+# R8  ─ Max store (for size check)
+# R9  ─ Constant 63 for AND operation (0x00111111)
+# R10 ─ Jump store (used for JR/JEQ/JLT/LD/SD operations with constant locations)
+# R11 ┬ Constants (1 and 3)
+# R12 ┘
+
+# Initialise registers
+
+0: LI  R10, 4;
+1: LD R1, R10;
+2: LI R10, 5;
+3: LD R2, R10;
+4: LI R4, 2;
+5: LI R10, 6;
+6: LD R5, R10;
+7: LD R7, R6;
+8: LI R9, 63;
+9: LI R11, 1;
+10: LI R12, 3;
+
+# Jump to 'Swap nums' step if R2<R1
+
+11: LI R10, 27; 
+12: JLT R10, R2, R1;
+
+# Size check
+
+13: NOT R8, R2;
+14: SUB R8, R8, R7;
+15: LI R10, 20;
+16: JLT R10, R1, R8;
+
+# Make smaller
+
+17: AND R1, R1, R9;
+18: AND R2, R2, R9;
+19: ADD R2, R2, R11;
+
+# Make next num
+
+20: ADD R1, R1, R2;
+21: ADD R1, R1, R7;
+
+# Increment
+
+22: ADD R4, R4, R11;
+23: ADD R6, R6, R11;
+24: AND R6, R6, R12;
+25: LD R7, R6;
+
+# Swap nums
+
+26: ADD R3, R2, R0;
+27: ADD R2, R1, R0;
+28: ADD R1, R3, R0;
+
+# do loop
+
+29: LI R10, 13;
+30: JLT R10, R4, R5;
+
+# store result
+
+31: LI R10, 7;
+32: SD R2, R10;
+
+# Finish
+
+33: END

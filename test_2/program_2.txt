@@ -1,7 +1,7 @@
 # Program to bubble sort an array of 10 values
 # Check the expected output and compare it with the one of your simulator
 # The format is: <instruction mem. address>: <OPCODE> <COMMA SEPARATED OPERANDS>;
-# All numers are decimal 
+# All numbers are decimal
 
 # Copy the array from source (0-9) to destination (10-19)
 0: LI R1, 0;  # R1 is the read pointer
