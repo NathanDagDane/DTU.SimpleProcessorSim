@@ -4,7 +4,7 @@ import re
 if len(sys.argv) < 4:
     print('Too few arguments.')
     sys.exit(-1)
-elif (len(sys.argv) > 4):
+elif (len(sys.argv) > 5):
     print('Too many arguments.')
     sys.exit(-1)
 

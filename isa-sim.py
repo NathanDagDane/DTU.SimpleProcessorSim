@@ -12,7 +12,7 @@ def execute_instruction(index: int):
     global instruction_index, running
     name = instructionMemory.read_opcode(index)
     args = [instructionMemory.read_operand_1(index), instructionMemory.read_operand_2(index), instructionMemory.read_operand_3(index)]
-    print(index, name, args)
+    # print(index, name, args)
     match name:
         case 'ADD':
             registerFile.write_register(args[0], registerFile.read_register(args[1]) + registerFile.read_register(args[2]))
@@ -37,10 +37,7 @@ def execute_instruction(index: int):
                 instruction_index = int(registerFile.read_register(args[0])) - 1
         case 'JLT':
             if registerFile.read_register(args[1]) < registerFile.read_register(args[2]):
-                print(f"{registerFile.read_register(args[1])} < {registerFile.read_register(args[2])} true")
                 instruction_index = int(registerFile.read_register(args[0])) - 1
-            else:
-                print(f"{registerFile.read_register(args[1])} > {registerFile.read_register(args[2])} false")
         case 'NOP':
             return
         case 'END':
@@ -56,6 +53,8 @@ while running:
         execute_instruction(instruction_index)
         instruction_index += 1
         current_cycle += 1
+        if instruction_index == 22:
+            registerFile.print_register('R1')
     else:
         running = False
         print("\n*!-!-!-!-!-!-!-!-!-!-!*")
@@ -63,7 +62,7 @@ while running:
         print("*!-!-!-!-!-!-!-!-!-!-!*")
 
 print("\n*- End State Reached -*")
-print(f"Total cycles: {current_cycle}\n")
+print(f"Total cycles: {current_cycle-1}\n")
 registerFile.print_all()
 print("")
 dataMemory.print_used()

@@ -1,0 +1,15 @@
+# The initial content of the data memory
+# The format is: <data mem. address>: <memory value>;
+# All numbers are decimal
+0: 4;  # ┬ Bias values
+1: 5;  # ┤
+2: 6;  # ┤
+3: 7;  # ┘
+4: 8;  # ┬ Starting nrs.
+5: 9;  # ┘
+6: 10; # ─ Nr. of fibonacci nrs. to generate
+# M7 stores the result
+
+# Runs in 138 cycles
+# Produces nr. 232
+# Tests functioning biases and bit-reduction
