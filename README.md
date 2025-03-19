@@ -20,6 +20,9 @@ It is limited to 8-bit unsigned integers and implements the following instructio
 | `NOP`            |    no operation     |
 | `END`            | end of instructions |
 
+It works with 16 registers `R0-R15` and 256 memory addresses `0-255`.  
+Some test programs are provided written in a simplified assembly language.
+
 ## Prerequisites
 ### VENV:
 This does not use any external packages.  
