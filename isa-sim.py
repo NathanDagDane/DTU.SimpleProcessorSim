@@ -53,8 +53,6 @@ while running:
         execute_instruction(instruction_index)
         instruction_index += 1
         current_cycle += 1
-        if instruction_index == 22:
-            registerFile.print_register('R1')
     else:
         running = False
         print("\n*!-!-!-!-!-!-!-!-!-!-!*")
