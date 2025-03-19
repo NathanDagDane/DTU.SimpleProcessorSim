@@ -44,6 +44,3 @@ Check the seed file for the specific purpose of each value.
 
 ---
 In any test, replace `1000` with your desired maximum cycles before simulation termination.  
-### Output
-The simulator will output its current state at the beginning and end of each cycle.  
-Each cycle is separated clearly with a line: '------...'
