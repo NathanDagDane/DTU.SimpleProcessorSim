@@ -1,6 +1,6 @@
 from init import *
 
-print("\nWelcome to the ISA simulator! - Designed by group 5")
+print("\nWelcome to the ISA simulator! - Nathan, Veronica, and Lucie")
 
 current_cycle = 0
 instruction_index = 0
@@ -12,7 +12,6 @@ def execute_instruction(index: int):
     global instruction_index, running
     name = instructionMemory.read_opcode(index)
     args = [instructionMemory.read_operand_1(index), instructionMemory.read_operand_2(index), instructionMemory.read_operand_3(index)]
-    # print(index, name, args)
     match name:
         case 'ADD':
             registerFile.write_register(args[0], registerFile.read_register(args[1]) + registerFile.read_register(args[2]))
