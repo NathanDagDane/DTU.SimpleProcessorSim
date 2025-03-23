@@ -29,19 +29,22 @@ This does not use any external packages.
 It will work for `python 3.10` and above.
 
 ## Usage
-### Test 1:
-This is an arbitrary test of all instructions.  
+### Test 1: 
 Run the following command in the base folder of the repository:  
 ```python3 isa-sim.py 1000 test_1/program.txt test_1/data_mem.txt```  
+
+This is an arbitrary test of all instructions. 
 
 ### Test 2 - Bubble sort:
 Run the following command in the base folder of the repository:  
 ```python3 isa-sim.py 1000 test_2/program.txt test_2/data_mem.txt```  
+
 This will sort all the numbers in memory 0 to 9 and write them in memory 10-19.
 
-### Test 3 - Largest prime factor algorithm:
+### Test 3 - Biased Fibonacci random number generator:
 Run the following command in the base folder of the repository:  
 ```python3 isa-sim.py 1000 test_3/program.txt test_3/seed_1.txt``` (change `seed_1` for other tests)  
+
 This will generate a random number using the Fibonacci sequence based on values in memory.  
 Check the seed file for the specific purpose of each value.
 
