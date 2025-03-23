@@ -8,7 +8,7 @@
 # R3  ─ Temporary store for swapping R1 and R2
 # R4  ─ Current index (in Fibonacci sequence)
 # R5  ─ Target index (Nr. of Fibonacci nrs. to generate)
-# R6  ─ Bias counter (cycles 1-4)
+# R6  ─ Bias counter (cycles 0-3)
 # R7  ─ Bias store (current bias number)
 # R8  ─ Max store (for size check)
 # R9  ─ Constant 63 for AND operation (0x00111111)
