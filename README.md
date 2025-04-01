@@ -1,9 +1,16 @@
-<h2 align="center">Instruction-Set Architecture Simulation</h2>
-<h3 align="center">For DTU Cyber Systems Intro</h3>
+<div align="center">
+  <h2>Instruction-Set Architecture Simulation</h2>
+  <a href="">
+    <img src="https://github.com/user-attachments/assets/e21f2d45-6775-48d8-bf8b-9b1cb99d22e5" alt="Logo" height="80">
+  </a>
+  <h3>For DTU Cyber Systems Intro</h3>
+</div>
 
 This is an implementation of a simple ISA processor in python.  
 It is limited to 8-bit unsigned integers and implements the following instruction set:  
 
+<div align="center">
+  
 | Instruction      |     Description     |
 |:-----------------|:-------------------:|
 | `ADD R1, R2, R3` |    R1 = R2 + R3     |
@@ -19,6 +26,7 @@ It is limited to 8-bit unsigned integers and implements the following instructio
 | `JLT R1, R2, R3` | if(R2<R3) go to R1  |
 | `NOP`            |    no operation     |
 | `END`            | end of instructions |
+</div>
 
 It works with 16 registers `R0-R15` and 256 memory addresses `0-255`.  
 Some test programs are provided written in a simplified assembly language.
